@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "chatbot-interface-streamlit"
+version = "0.1.0"
+description = ""
+authors = ["krawcts <lucassampaio22k@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+streamlit = "^1.43.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
