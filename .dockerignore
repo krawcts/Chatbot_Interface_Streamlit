@@ -1,0 +1,9 @@
+/c:/Users/lucas/Workspace/Chatbot_Interface_Streamlit/.dockerignore
+**/__pycache__
+**/.venv
+**/.git
+**/.vscode
+**/*.log
+Dockerfile
+.dockerignore
+README.md
