@@ -1,5 +1,5 @@
 # Dockerfile
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Environment variables definition
 ENV PYTHONUNBUFFERED=1 \
@@ -29,7 +29,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY ./app/streamlit_app.py .
+COPY ./app .
 
 # Switch to non-root user
 USER appuser
