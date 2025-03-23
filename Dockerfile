@@ -1,5 +1,5 @@
 # Dockerfile
-FROM python:3.11-slim
+FROM python:3.9-slim
 
 # Environment variables definition
 ENV PYTHONUNBUFFERED=1 \
@@ -29,10 +29,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY ./app ./app
+COPY ./app/streamlit_app.py .
 
 # Switch to non-root user
 USER appuser
 
 # Command to start the application
-CMD ["streamlit", "run", "app/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
