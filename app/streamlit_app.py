@@ -1,4 +1,10 @@
 import streamlit as st
+import sys
+from pathlib import Path
+# Adicione o diretório raiz ao PYTHONPATH
+sys.path.append(str(Path(__file__).parent.parent))
+from model.api_conection import ai_service
+
 
 def main():
     # Configuração da página
@@ -20,8 +26,10 @@ def main():
     # Botão de envio
     if st.button("Enviar"):
         if user_input:
-            st.write("Você digitou:", user_input)
-            # Aqui posteriormente será adicionada a lógica de interação com o agente de IA
+            with st.spinner("Processando sua solicitação..."):
+                response = ai_service.generate_response(user_input)
+                st.write("Resposta do Assistente:")
+                st.success(response)
         else:
             st.warning("Por favor, digite uma mensagem antes de enviar.")
 
