@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 # Adicione o diretório raiz ao PYTHONPATH
 sys.path.append(str(Path(__file__).parent.parent))
-from model.api_conection import ai_service
+from llm_services.llm_client import ai_service
 
 
 def main():
@@ -27,7 +27,7 @@ def main():
     if st.button("Enviar"):
         if user_input:
             with st.spinner("Processando sua solicitação..."):
-                response = ai_service.generate_response(user_input)
+                response = deepseek_service.chat_completion(user_input)
                 st.write("Resposta do Assistente:")
                 st.success(response)
         else:
