@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 # Adicione o diretório raiz ao PYTHONPATH
 sys.path.append(str(Path(__file__).parent.parent))
-from llm_services.llm_client import ai_service
+from llm_services.deepseek_client import deepseek_service
 
 
 def main():
